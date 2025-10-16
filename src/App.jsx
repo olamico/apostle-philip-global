@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import "./App.css";
-import Card from "./components/Card";
+import Card from "./Components/Card.jsx";
 const App = () => {
   const [open, setOpen] = useState(false);
   return (
