@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import "./App.css";
 import Card from "./Components/Card.jsx";
+import Partner from "./Components/Partner.jsx";
 const App = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -19,7 +20,7 @@ const App = () => {
         <div className="md:hidden">
           <div
             className="cursor-pointer text-4xl"
-            onClick={() => setOpen((prev) => !prev)}
+            onClick={() => setOpen(!open)}
           >
             {open ? <X size={28} /> : <Menu size={28} />}
           </div>
@@ -30,12 +31,14 @@ const App = () => {
           >
             <a
               href="#home"
+              onClick={() => setOpen(false)}
               className="block px-4 py-2 rounded hover:bg-red-600 hover:text-white transition font-bold hover:scale-110 transition-transform"
             >
               Home
             </a>
             <a
               href="#crusade"
+              onClick={() => setOpen(false)}
               className="block px-4 py-2 rounded hover:bg-red-600 hover:text-white transition font-bold hover:scale-110 transition-transform"
             >
               Crusade
@@ -43,15 +46,24 @@ const App = () => {
 
             <a
               href="#aboutUs"
+              onClick={() => setOpen(false)}
               className="block px-4 py-2 rounded hover:bg-red-600 hover:text-white transition font-bold hover:scale-110 transition-transform"
             >
               About Us
             </a>
             <a
               href="#contactUs"
+              onClick={() => setOpen(false)}
               className="block px-4 py-2 rounded hover:bg-red-600 hover:text-white transition font-bold hover:scale-110 transition-transform"
             >
               Contact Us
+            </a>
+            <a
+              href="#becomeAPartner"
+              onClick={() => setOpen(false)}
+              className="block px-4 py-2 rounded hover:bg-red-600 hover:text-white transition font-bold hover:scale-110 transition-transform"
+            >
+              Become a Partner
             </a>
           </div>
         </div>
@@ -113,9 +125,9 @@ const App = () => {
                 healing, and restoration.
               </h1>
               <div>
-                <div className="flex justify item-centre gap-8 mt-4">
-                  <a href="www.facebook.com/apostlephilipglobal">
-                    {" "}
+                {/*<div className="flex justify item-centre gap-8 mt-4">
+                   <a href="www.facebook.com/apostlephilipglobal">
+                    
                     <img
                       src="facebook.png"
                       alt="facebook"
@@ -142,6 +154,14 @@ const App = () => {
                       alt="youtube"
                       className="rounded-full border-2 border-red-600  hover:text-red-600 h-30 w-30 mt-6 hover:scale-110 transition-transform"
                     />
+                  </a> 
+                </div>*/}
+                <div>
+                  <a
+                    href="#becomeAPartner"
+                    className="mt-6 px-8 py-3 bg-gray-600 text-white rounded-full font-semibold shadow-md hover:bg-red-700 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                  >
+                    Partnership and Support
                   </a>
                 </div>
               </div>
@@ -202,32 +222,94 @@ const App = () => {
         <div>
           <section
             id="aboutUs"
-            className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 px-8 py-16 flex flex-col md:flex-row items-start justify-between gap-12"
+            className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 px-16 py-16 flex flex-col md:flex-row items-start justify-between gap-12"
           >
             {/* Left Section - Image */}
 
             {/* Right Section - Text */}
             <div className="w-full md:w-1/2 space-y-6 text-gray-800">
               <h2 className="text-4xl font-bold text-red-700 mb-4">About Us</h2>
-
               <p className="text-lg leading-relaxed">
                 <strong>Founder:</strong> Apostle Philip Kehinde Adeyemo
               </p>
-
               <p className="text-lg leading-relaxed">
                 <strong>Ministry:</strong> Apostle Philip Global Healing
                 Ministries
               </p>
-
+              <p className="text-justify">
+                Apostle Philip Kehinde Adeyemo Apostle with an Evangelistic
+                Assignment Called into the office of an Apostle with a divine
+                mandate to spread the Gospel, Apostle Philip Kehinde Adeyemo is
+                the founder of Apostle Philip Global Healing Ministries. Guided
+                by the principles of Galatians 1:1, he is driven to fulfill his
+                apostolic calling.
+              </p>
+              <p className="text-justify">
+                <h3 className="text-2xl font-semibold text-red-700 mb-2">
+                  Ministry Overview
+                </h3>
+                Apostle Philip Global Healing Ministries is dedicated to
+                spreading the message of salvation, healing, and deliverance
+                through Jesus Christ. The ministry's mission is centered on
+                Philip World Outreach & Healing Crusades, reaching the lost and
+                equipping believers for spiritual growth.
+              </p>
+              <p className="text-lg leading-relaxed">
+                <strong>Background and Calling</strong>
+              </p>
+              <p className="text-justify">
+                Born on February 6th, 1991, to Overseer Emmanuel and Deaconess
+                Abigail Adeyemo in Ilu Adeyemo, Ogbomosho, Oyo State, Apostle
+                Philip was raised in a Christian family. He gave his life to
+                Jesus Christ and was baptized in 2001 at The Apostolic Church
+                Nigeria, Akandie Assembly, Ogbomosho. During his second year at
+                Federal College of Education Abeokuta, Apostle Philip received
+                the call to ministry in 2015. Since then, God has used him
+                mightily in healings, deliverances, and soul-winning, taking him
+                to various outreaches, revivals, conferences, and crusades.
+              </p>
+              <p className="text-lg leading-relaxed">
+                <strong>Theology and Doctrine </strong>
+              </p>
+              <p className="text-justify">
+                Apostle Philip Global Healing Ministries stands on the
+                foundation of: - Salvation through the incarnation, death, and
+                resurrection of Jesus Christ - Healing and miracles as
+                manifestations of God's power - The second coming of Jesus
+                Christ and life after death - The trinity and the gifts of the
+                Holy Spirit - The teachings of Jesus Christ and the Apostles.
+              </p>
+              <p className="text-lg leading-relaxed">
+                <strong>Personal Life</strong>
+              </p>
+              <p className="text-justify">
+                Apostle Philip is married to Pastor Mrs. Goddey Abimbola, whom
+                he wed in a traditional, court, and church wedding at The
+                Redeemed Christian Church of God, Ogun Province 15, Idi-Aba
+                Abeokuta, Ogun State on August 14th, 2021. God has blessed him
+                with a son and a twins a boy and a girl, a beautiful family of
+                five.
+              </p>
+              <p>
+                <h3 className="text-2xl font-semibold text-red-700 mb-2">
+                  Global Impact
+                </h3>
+              </p>
+              <p className="text-justify">
+                Through his ministry, Apostle Philip has touched lives globally,
+                preaching the Gospel and demonstrating God's love through
+                various humanitarian efforts. His dedication to spreading the
+                message of hope and redemption continues to inspire and uplift
+                believers worldwide.
+              </p>
               <p className="text-lg leading-relaxed">
                 <strong>Location:</strong> 2, Odo-Aluko, Ijegun, Lagos, Nigeria
               </p>
-
               <div>
                 <h3 className="text-2xl font-semibold text-red-700 mb-2">
                   Mission
                 </h3>
-                <p className="text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed text-justify">
                   Empowering lives through the power of prayer, healing, and the
                   gospel.
                   <br />
@@ -238,7 +320,6 @@ const App = () => {
                   fosters a community of believers united in peace and harmony.
                 </p>
               </div>
-
               <div>
                 <h3 className="text-2xl font-semibold text-red-700 mb-2">
                   Team
@@ -253,7 +334,6 @@ const App = () => {
                   <li>Crusade Planning Committee</li>
                 </ul>
               </div>
-
               <div>
                 <h3 className="text-2xl font-semibold text-red-700 mb-2">
                   Core Value
@@ -264,7 +344,6 @@ const App = () => {
                   renewed health and vitality.
                 </p>
               </div>
-
               <div>
                 <h3 className="text-2xl font-semibold text-red-700 mb-2">
                   Vision
@@ -276,11 +355,11 @@ const App = () => {
                 </p>
               </div>
             </div>
-            <div className="w-full md:w-1/2 flex justify-center md:justify-start px-24">
+            <div className="w-full md:w-1/2 flex justify-end md:justify-end px-24">
               <img
                 src="profile.jpg"
                 alt="Profile"
-                className="rounded-full shadow-2xl w-80 h-120 object-cover border-4 border-white"
+                className="hidden md:flex rounded-full shadow-2xl w-80 h-120 object-cover border-4 border-white"
               />
             </div>
           </section>
@@ -374,6 +453,9 @@ const App = () => {
               </div>
             </div>
           </div>
+          <section id="becomeAPartner" className="mt-16">
+            <Partner />
+          </section>
         </section>
         <footer className="bg-red-700 text-white py-6 text-center">
           <p className="text-lg font-medium">
