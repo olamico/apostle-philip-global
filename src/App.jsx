@@ -17,6 +17,10 @@ const App = () => {
             className="h-8 w-auto rounded-full"
           />
         </div>
+        <div>
+          <p className="text:lg md:text-4xl font-semibold text-red-700">
+          Apostle Philip Global Healing Ministries</p>
+        </div>
         <div className="md:hidden">
           <div
             className="cursor-pointer text-4xl"
@@ -117,9 +121,9 @@ const App = () => {
               <img
                 src="banner.jpg"
                 alt="Ministry Banner"
-                className="rounded-2xl shadow-lg w-full max-w-lg object-cover"
+                className="rounded-xl shadow-lg w-full max-w-lg object-cover"
               />
-              <h1 className="text-2xl font-semibold text-red-500 leading-relaxed">
+              <h1 className="text-2xl text-justify font-semibold text-red-500 leading-relaxed">
                 Philip World Outreach & Crusades (PWOC) is a ministry dedicated
                 to reaching the ends of the earth with the message of salvation,
                 healing, and restoration.
@@ -338,7 +342,7 @@ const App = () => {
                 <h3 className="text-2xl font-semibold text-red-700 mb-2">
                   Core Value
                 </h3>
-                <p className="text-lg leading-relaxed">
+                <p className="text-lg text-justify leading-relaxed">
                   Ministering to the sick, bringing healing to their bodies,
                   souls, and spirits, and empowering them to serve God with
                   renewed health and vitality.
@@ -348,7 +352,7 @@ const App = () => {
                 <h3 className="text-2xl font-semibold text-red-700 mb-2">
                   Vision
                 </h3>
-                <p className="text-lg leading-relaxed">
+                <p className="text-lg text-justify leading-relaxed">
                   To spread the gospel of salvation and healing to a world in
                   need, equipping believers to live victorious lives and fulfill
                   their destinies.
@@ -365,6 +369,7 @@ const App = () => {
           </section>
         </div>
         {/*contact us */}
+        
         <section
           id="contactUs"
           className="bg-gradient-to-br from-gray-100 via-white to-gray-200 px-8 py-16 text-gray-800"
