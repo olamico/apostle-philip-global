@@ -18,7 +18,11 @@ const App = () => {
           />
         </div>
         <div>
+<<<<<<< HEAD
           <p className="text:lg md:text-4xl font-semibold text-red-700">
+=======
+          <p>
+>>>>>>> 559e2b99c31f32fdf27cf552e10e3c7e418d2284
           Apostle Philip Global Healing Ministries</p>
         </div>
         <div className="md:hidden">
