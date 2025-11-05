@@ -17,6 +17,10 @@ const App = () => {
             className="h-8 w-auto rounded-full"
           />
         </div>
+        <div>
+          <p>
+          Apostle Philip Global Healing Ministries</p>
+        </div>
         <div className="md:hidden">
           <div
             className="cursor-pointer text-4xl"
