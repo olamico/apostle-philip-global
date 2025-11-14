@@ -158,22 +158,24 @@ const App = () => {
             </div>
           </div>
 
-          <div className="w-full flex flex-col items-center text-center md:text-left space-y-6 py-8 px-50 mt-10">
-            <div>
+          <div className=" flex-col justify-center items-center text-center md:text-left space-y-6 py-8 mt-10">
+            <div className="flex justify-center">
               <a
                 href="#becomeAPartner"
-                className="mt-6 mb-5 px-8 py-3 bg-red-600 text-white rounded-full font-semibold shadow-md hover:bg-gray-700 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                className="flex p-6 w-80 h-20 justify-center bg-red-600 text-white rounded-full font-semibold shadow-md hover:bg-gray-700 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
               >
                 Partnership and Support
               </a>
             </div>
-            <h1 className="text-2xl text-justify font-semibold text-red-500 leading-relaxed mt-4">
-              APOSTLE PHILIP GLOBAL HEALING MINISTRIES (APGHM) is a ministry
-              dedicated to reaching the ends of the earth with the message of
-              salvation, healing, and restoration. Through crusades, revivals,
-              and conferences, APGHM builds the body of Christ and fosters a
-              community of believers united in peace and harmony.
-            </h1>
+            <div>
+              <h1 className="flex justify-center text-justify  text-2xl md:px-20 font-semibold text-red-500 leading-relaxed mt-4 p-10">
+                APOSTLE PHILIP GLOBAL HEALING MINISTRIES (APGHM) is a ministry
+                dedicated to reaching the ends of the earth with the message of
+                salvation, healing, and restoration. Through crusades, revivals,
+                and conferences, APGHM builds the body of Christ and fosters a
+                community of believers united in peace and harmony.
+              </h1>
+            </div>
           </div>
 
           {/* <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-200 p-8 gap-10">
