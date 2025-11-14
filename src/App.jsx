@@ -6,6 +6,7 @@ import Card from "./Components/Card.jsx";
 import Partner from "./Components/Partner.jsx";
 const App = () => {
   const [open, setOpen] = useState(false);
+  const [index, setIndex] = useState(0);
   return (
     <div className=" bg-white text-gray-800">
       <header className="sticky top-0 z-50 bg-white flex justify-between items-center p-6 shadow-md">
@@ -18,8 +19,9 @@ const App = () => {
           />
         </div>
         <div>
-          <p className="md:text-4xl font-semibold text-red-700">
-          Apostle Philip Global Healing Ministries</p>
+          <p className="md:text-2xl font-semibold text-red-700">
+            Apostle Philip Global Healing Ministries
+          </p>
         </div>
         <div className="md:hidden">
           <div
@@ -65,7 +67,7 @@ const App = () => {
             <a
               href="#becomeAPartner"
               onClick={() => setOpen(false)}
-              className="block px-4 py-2 rounded hover:bg-red-600 hover:text-white transition font-bold hover:scale-110 transition-transform"
+              className="block px-4 py-2 rounded hover:bg-red-600 hover:text-white font-bold hover:scale-110 transition-transform"
             >
               Become a Partner
             </a>
@@ -75,26 +77,26 @@ const App = () => {
         <nav className="hidden md:flex items-center space-x-6 text-lg text-red-700">
           <a
             href="#home"
-            className="block px-4 py-2 rounded hover:bg-red-600 hover:text-white transition font-bold hover:scale-110 transition-transform"
+            className="block px-4 py-2 rounded hover:bg-red-600 hover:text-white font-bold hover:scale-110 transition-transform"
           >
             Home
           </a>
           <a
             href="#crusade"
-            className="block px-4 py-2 rounded hover:bg-red-600 hover:text-white transition font-bold hover:scale-110 transition-transform"
+            className="block px-4 py-2 rounded hover:bg-red-600 hover:text-white font-bold hover:scale-110 transition-transform"
           >
             Crusade & Revival
           </a>
 
           <a
             href="#aboutUs"
-            className="block px-4 py-2 rounded hover:bg-red-600 hover:text-white transition font-bold hover:scale-110 transition-transform"
+            className="block px-4 py-2 rounded hover:bg-red-600 hover:text-white font-bold hover:scale-110 transition-transform"
           >
             About Us
           </a>
           <a
             href="#contactUs"
-            className="block px-4 py-2 rounded hover:bg-red-600 hover:text-white transition font-bold hover:scale-110 transition-transform"
+            className="block px-4 py-2 rounded hover:bg-red-600 hover:text-white font-bold hover:scale-110 transition-transform"
           >
             Contact Us
           </a>
@@ -103,10 +105,80 @@ const App = () => {
       <div>
         {/*home */}
         <section id="home">
-          <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-200 p-8 gap-10">
-            {/* Left Section */}
-            {/* Right Section */}
-            <div className="flex flex-col w-full md:w-1/2  flex justify items-center mt-10 md:mt-0 gap-4 px-10">
+          {/* ===== Carousel Section ===== */}
+          <div className="relative w-full h-[300px] md:h-[700px] overflow-hidden mt-4">
+            {/* Images */}
+            <div
+              className="flex transition-transform duration-700"
+              style={{ transform: `translateX(-${index * 100}%)` }}
+            >
+              {[
+                "carousel3.jpg",
+                "carousel2.jpg",
+                "carousel1.jpg",
+                "carousel4.jpg",
+                "carousel5.jpg",
+              ].map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  alt="slide"
+                  className="w-full h-[300px] md:h-[700px] object-cover flex-shrink-0"
+                />
+              ))}
+            </div>
+
+            {/* Prev Button */}
+            <button
+              onClick={() => setIndex((index - 1 + 3) % 3)}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-red-700 text-white px-3 py-2 rounded-full shadow-lg"
+            >
+              ‹
+            </button>
+
+            {/* Next Button */}
+            <button
+              onClick={() => setIndex((index + 1) % 3)}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-red-700 text-white px-3 py-2 rounded-full shadow-lg"
+            >
+              ›
+            </button>
+
+            {/* Dots */}
+            <div className="absolute bottom-4 w-full flex justify-center gap-3">
+              {[0, 1, 2].map((dot) => (
+                <div
+                  key={dot}
+                  onClick={() => setIndex(dot)}
+                  className={`h-3 w-3 rounded-full cursor-pointer ${
+                    index === dot ? "bg-red-700" : "bg-gray-300"
+                  }`}
+                ></div>
+              ))}
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col items-center text-center md:text-left space-y-6 py-8 px-50 mt-10">
+            <div>
+              <a
+                href="#becomeAPartner"
+                className="mt-6 mb-5 px-8 py-3 bg-red-600 text-white rounded-full font-semibold shadow-md hover:bg-gray-700 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+              >
+                Partnership and Support
+              </a>
+            </div>
+            <h1 className="text-2xl text-justify font-semibold text-red-500 leading-relaxed mt-4">
+              APOSTLE PHILIP GLOBAL HEALING MINISTRIES (APGHM) is a ministry
+              dedicated to reaching the ends of the earth with the message of
+              salvation, healing, and restoration. Through crusades, revivals,
+              and conferences, APGHM builds the body of Christ and fosters a
+              community of believers united in peace and harmony.
+            </h1>
+          </div>
+
+          {/* <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-200 p-8 gap-10">
+            
+            <div className="flex flex-col w-full md:w-3/4  flex justify items-center mt-10 md:mt-0 gap-4 px-6">
               <img
                 src="founder.jpg"
                 alt="Apostle Philip Kehinde Adeyemo"
@@ -118,59 +190,54 @@ const App = () => {
               </h1>
             </div>
             <div className="w-full md:w-1/2 flex flex-col items-center text-center md:text-left space-y-6 pr-4">
-              <img
-                src="banner.jpg"
-                alt="Ministry Banner"
-                className="rounded-xl shadow-lg w-full max-w-lg object-cover"
-              />
               <h1 className="text-2xl text-justify font-semibold text-red-500 leading-relaxed">
                 Philip World Outreach & Crusades (PWOC) is a ministry dedicated
                 to reaching the ends of the earth with the message of salvation,
                 healing, and restoration.
-              </h1>
+              </h1></div>
               <div>
-                {/*<div className="flex justify item-centre gap-8 mt-4">
-                   <a href="www.facebook.com/apostlephilipglobal">
-                    
+                <div className="flex justify item-centre gap-8 mt-4">
+                  {/*<a href="www.facebook.com/apostlephilipglobal">
+                     
                     <img
                       src="facebook.png"
                       alt="facebook"
-                      className="rounded-full hover:text-red-600 border-2 border-blue-600 h-30 w-30 mt-6 hover:scale-110 transition-transform"
+                      className="rounded-full hover:text-red-600 border-2 border-blue-600 h-10 w-10 mt-6 hover:scale-110 transition-transform"
                     />
                   </a>
                   <a href="www.instagram.com/apostlephilipglobal">
                     <img
                       src="instagram.png"
                       alt="instagram"
-                      className="rounded-full hover:text-red-600 border-2 border-pink-500 h-30 w-30 mt-6 hover:scale-110 transition-transform"
+                      className="rounded-full hover:text-red-600 border-2 border-pink-500 h-10 w-10 mt-6 hover:scale-110 transition-transform"
                     />
                   </a>
                   <a href="www.x.com/apostlephilipglobal">
                     <img
                       src="twitter.png"
                       alt="twitter"
-                      className="rounded-full hover:text-red-600border-2 border-blue-400 h-30 w-30 mt-6 hover:scale-110 transition-transform"
+                      className="rounded-full hover:text-red-600 border-2 border-blue-400 h-10 w-10 mt-6 hover:scale-110 transition-transform"
                     />
                   </a>
                   <a href="www.youtube.com/@ApostlePhilipGlobal">
                     <img
                       src="youtube.png"
                       alt="youtube"
-                      className="rounded-full border-2 border-red-600  hover:text-red-600 h-30 w-30 mt-6 hover:scale-110 transition-transform"
+                      className="rounded-full border-2 border-red-600  hover:text-red-600 h-10 w-10 mt-6 hover:scale-110 transition-transform"
                     />
-                  </a> 
-                </div>*/}
-                <div>
-                  <a
-                    href="#becomeAPartner"
-                    className="mt-6 px-8 py-3 bg-gray-600 text-white rounded-full font-semibold shadow-md hover:bg-red-700 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
-                  >
-                    Partnership and Support
-                  </a>
+                  </a> */}
+          {/* <div className=" ">
+                    <a
+                      href="#becomeAPartner"
+                      className="mt-6 px-8 py-3 bg-gray-600 text-white rounded-full font-semibold shadow-md hover:bg-red-700 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                    >
+                      Partnership and Support
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </section>
         {/*crusade */}
         <section
@@ -324,19 +391,26 @@ const App = () => {
                   fosters a community of believers united in peace and harmony.
                 </p>
               </div>
-              <div>
-                <h3 className="text-2xl font-semibold text-red-700 mb-2">
-                  Team
-                </h3>
-                <ul className="list-disc list-inside text-lg leading-relaxed">
-                  <li>PWOC Evangelists</li>
-                  <li>PWOC Leaders</li>
-                  <li>Worship Team</li>
-                  <li>Prayer Team</li>
-                  <li>Logistics and Protocols</li>
-                  <li>Resource and Finance</li>
-                  <li>Crusade Planning Committee</li>
-                </ul>
+              <div className="p-10 flex gap-20">
+                <div>
+                  <h3 className="flex justify-center text-2xl font-semibold text-red-700 mb-8">
+                    Team
+                  </h3>
+                  {/* <ul className="list-disc list-inside text-lg leading-relaxed">
+                    <li>PWOC Evangelists</li>
+                    <li>PWOC Leaders</li>
+                    <li>Worship Team</li>
+                    <li>Prayer Team</li>
+                    <li>Logistics and Protocols</li>
+                    <li>Resource and Finance</li>
+                    <li>Crusade Planning Committee</li>
+                  </ul> */}
+                  <img
+                    src="carousel1.jpg"
+                    alt="Profile"
+                    className="hidden md:flex rounded-2xl shadow-2xl w-500 h-120 object-cover bor0der-4 border-white "
+                  />
+                </div>
               </div>
               <div>
                 <h3 className="text-2xl font-semibold text-red-700 mb-2">
@@ -359,6 +433,7 @@ const App = () => {
                 </p>
               </div>
             </div>
+
             <div className="w-full md:w-1/2 flex justify-end md:justify-end px-24">
               <img
                 src="profile.jpg"
@@ -369,7 +444,7 @@ const App = () => {
           </section>
         </div>
         {/*contact us */}
-        
+
         <section
           id="contactUs"
           className="bg-gradient-to-br from-gray-100 via-white to-gray-200 px-8 py-16 text-gray-800"
